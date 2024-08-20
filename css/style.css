@@ -1,0 +1,442 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#pdf-container {
+    margin: 20px auto;
+    overflow: auto; /* Allow scrolling if content overflows */
+    height: auto; /* Adjust height as needed */
+    width: 50%;
+    border: none; /* Remove border if not needed */
+    position: relative;
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    display: block; /* Ensure canvases do not have extra space below */
+    margin: 0; /* Remove margin to eliminate gaps */
+}
+
+#controls {
+    margin: 10px auto;
+    text-align: center;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/*----Others-----*/
+.header {
+    background-color: #d9534f;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+.header-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: white; /* Inherit text color from parent element */
+}
+
+.header-link:hover {
+    color: #f0b3b1; /* Optional: Change color on hover */
+    text-decoration: none;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+.comic-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.comic {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.comic:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+.comic a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.comic a:hover {
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #d9534f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #c9302c;
+}
+
+.update-item, .trending-item {
+    margin-bottom: 20px;
+}
+
+.update-item p, .trending-item p {
+    margin: 10px 0;
+}
+
+/* Combined What's New Section */
+.whats-new {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.whats-new h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.news-columns {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.updates, .trending {
+    width: 48%;
+}
+
+.updates h3, .trending h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.news-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.news-item h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.news-item p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.news-item .btn {
+    display: inline-block;
+    background-color: #d9534f;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.news-item .btn:hover {
+    background-color: #c9302c;
+}
+
+
+/*---------Pop-up setting*/
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.5s;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+/*---------Other settings*/
+
+.chapter-navbar {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Lebar default untuk navbar */
+    transition: all 0.5s ease-in-out, background-color 0.3s; /* Menambahkan transisi halus untuk semua perubahan */
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.chapter-navbar.hidden {
+    width: 0; /* Menyembunyikan navbar dengan lebar 0 */
+    background-color: black;
+}
+
+.chapter-navbar.transparent {
+    background-color: transparent; /* Menghilangkan background */
+}
+
+#toggle-navbar {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 0px;
+    text-align: center;
+    overflow: hidden; /* Pastikan konten tidak meluap */
+    white-space: nowrap; /* Mencegah teks terpotong */
+    transition: background-color 0.3s, opacity 0.5s ease-in-out; /* Transisi untuk background dan opacity */
+    width: 200px;
+}
+
+#toggle-navbar:hover{
+    background-color: #c9302c;
+}
+
+#toggle-navbar span {
+    display: inline-block;
+    transition: opacity 0.3s ease-in-out; /* Transisi halus untuk perubahan teks */
+}
+
+#toggle-navbar.show-chapters {
+    width: 0px; /* Lebar tombol untuk simbol "☰" */
+    padding: 10px 25px 10px 10px; /* Padding untuk menyesuaikan ukuran */
+}
+
+#toggle-navbar.hide-chapters {
+    width: 200px; /* Lebar tombol untuk teks "Hide Chapters" */
+    padding: 10px; /* Padding default */
+}
+
+.hidden-navbar-text {
+    opacity: 0; /* Hilangkan teks secara halus */
+}
+
+.visible-navbar-text {
+    opacity: 1; /* Tampilkan teks secara halus */
+}
+
+#chapter-list {
+    display: flex;
+    gap: 10px;
+    overflow-x: hidden; /* Scroll horizontal jika daftar chapter terlalu banyak */
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
+#chapter-list .comic {
+    background-color: #555;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+#chapter-list .comic a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#chapter-list .comic:hover {
+    background-color: #777;
+}
+
+#chapter-list .comic.active {
+    background-color: #777; /* Highlight color for active chapter */
+}
+
+#pdf-container {
+    padding: 20px;
+    width: 60%;
+}
+
+iframe{
+    border: none;
+}
+
+/* Styling untuk section di atas dan di bawah video */
+.video-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left;
+}
+
+.video-section h2, .video-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.video-section p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.video-features {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.video-features li {
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.action-buttons {
+    margin-top: 20px;
+}
+
+.action-buttons .btn-save, .action-buttons .btn-share {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-buttons .btn-save:hover, .action-buttons .btn-share:hover {
+    background-color: #c9302c;
+}
+
+#video-intro{
+    text-align: center;
+}
+
+
+/*---Avoid Download by Users----*/
+body{
+    -webkit-touch-callout: none; /* Untuk Safari iOS */
+    -webkit-user-select: none; /* Untuk Webkit-based browsers */
+    -moz-user-select: none; /* Untuk Firefox */
+    -ms-user-select: none; /* Untuk Internet Explorer/Edge */
+    user-select: none; /* Untuk browser modern */
+}
+
+canvas{
+    pointer-events: none; /* Menghindari klik pada elemen canvas */
+}
+
+
+/*----button--------*/
+.scroll-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.scroll-btn:hover {
+    color: #f0b3b1;
+}
+
+
+/*----Video Playback Setting----*/

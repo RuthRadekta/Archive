@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body{
+            background-color: black;
+        }
+        /*----Remove scrollbar----*/ 
+        /*di browser berbasis Webkit */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Untuk Firefox */
+        body {
+            overflow: -moz-scrollbars-none;
+        }
+
+        /* Untuk IE dan Edge */
+        html, body {
+            overflow: auto;
+            -ms-overflow-style: none;
+        }
+
+        #pdf-container{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="header-link">
+            <h1>HELLCOME</h1>
+        </a>
+    </header>    
+
+    <div id="pdf-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        const url = '../pdf/PTIKForum.pdf';
+        pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+            pdfDoc = pdfDoc_;
+            document.querySelector('#pdf-container').textContent = '';
+            renderAllPages();
+        });
+    </script>
+</body>
+</html>

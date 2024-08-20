@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="header-link">
+            <h1>HELLCOME</h1>
+        </a>
+    </header>    
+
+    <!-- Navbar Chapter yang sticky -->
+    <nav id="chapter-navbar" class="chapter-navbar">
+        <button id="toggle-navbar"><span>Hide Chapters</span></button>
+        <button id="scroll-left" class="scroll-btn">&lt;</button>
+        <div id="chapter-list">
+            <div class="comic"><a href="#" data-content-id="1_xhpUahGpfZjvpkF4fqSLd381VyIz-AN" data-content-type="video">Chapter 1</a></div>
+            <div class="comic"><a href="#" data-video-id="186PzEWsPnI6KX1YBjm8Okj3BsOOnVtMm">Chapter 2</a></div>
+            <div class="comic"><a href="#" data-video-id="1S62SpArlgdU3lI1Uh2HqznD0cdaEVhOe">Chapter 3</a></div>
+            <div class="comic"><a href="#" data-video-id="1yBFr6dQVVNLhn9cvruAL2XQvTi1DQh2h">Chapter 4</a></div>
+            <div class="comic"><a href="#" data-video-id="1vjedaT8WZob4goPG2AJNZyW4PWwEcTP8">Chapter 5</a></div>
+            <div class="comic"><a href="#" data-video-id="1rDFT2zXjkZBRR_B8LDqh58q-ykU7oWOG">Chapter 6</a></div>
+            <div class="comic"><a href="#" data-video-id="18b9uMOdZK_SU3yXbvu0nP18mNvfV2vOz">Chapter 7</a></div>
+            <div class="comic"><a href="#" data-video-id="1B6g0eru1kqSWlPC2P0XxMWsVm3T0YmWx">Chapter 8</a></div>
+            <!-- Tambahkan chapter lain di sini -->
+        </div>
+        <button id="scroll-right" class="scroll-btn">&gt;</button>
+    </nav>
+
+    <!-- Pengantar di atas video -->
+<section id="video-intro" class="video-section">
+    <h2>Welcome to Our Custom Video Player</h2>
+    <p>Enjoy a seamless video experience with easy chapter navigation. Explore each chapter to delve deeper into the content.</p>
+    <span style="font-size: smaller; color: #c9302c;"><i>Please choose one of the chapters above.</i></span>
+</section>
+
+<!-- Konten Video -->
+<div id="video-container" class="video-container">
+    <iframe id="document-iframe" width="90%" height="600px" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<!-- Sinopsis di bawah video -->
+<section id="video-synopsis" class="video-section">
+    <h3>Video Synopsis</h3>
+    <p>This video explores the intricate details of various topics. Each chapter is designed to provide in-depth knowledge and insights, making your viewing experience both informative and engaging.</p>
+    <ul class="video-features">
+        <li><strong>Duration:</strong> 45 minutes</li>
+        <li><strong>Resolution:</strong> 1080p Full HD</li>
+        <li><strong>Chapters:</strong> 8 detailed sections</li>
+        <li><strong>Interactive Elements:</strong> Scroll through chapters, highlight key points</li>
+    </ul>
+    <div class="action-buttons">
+        <button class="btn-save">Save Video</button>
+        <button class="btn-share">Share Video</button>
+    </div>
+</section>
+
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>        
+</body>
+</html>

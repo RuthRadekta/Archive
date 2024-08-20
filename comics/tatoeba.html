@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatoeba [Kuroken]</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="header-link">
+            <h1>HELLCOME</h1>
+        </a>
+    </header>    
+
+    <div>
+        <h6>Tatoeba is Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, omnis. Quod nulla architecto porro temporibus. Corrupti autem molestiae voluptates laudantium mollitia explicabo alias, ipsam pariatur sint facere eos ab ex.</h6>
+    </div>
+
+    <div id="pdf-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        const url = '../pdf/comic2.pdf';
+        pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+            pdfDoc = pdfDoc_;
+            document.querySelector('#pdf-container').textContent = '';
+            renderAllPages();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midnight Men</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="header-link">
+            <h1>HELLCOME</h1>
+        </a>
+    </header>    
+
+    <!-- Navbar Chapter yang sticky -->
+    <nav id="chapter-navbar" class="chapter-navbar">
+        <button id="toggle-navbar"><span>Hide Chapters</span></button>
+        <button id="scroll-left" class="scroll-btn">&lt;</button>
+        <div id="chapter-list">
+            <div class="comic"><a href="../pdf/comic3.pdf" target="_blank">Chapter 1</a></div>
+            <div class="comic"><a href="../pdf/PTIKForum.pdf" target="_blank">Chapter 2</a></div>
+            <div class="comic"><a href="../pdf/chapter3.pdf" target="_blank">Chapter 3</a></div>
+            <!-- Tambahkan chapter lain di sini -->
+        </div>
+        <button id="scroll-right" class="scroll-btn">&gt;</button>
+    </nav>
+
+    <!-- Konten PDF -->
+    <div id="pdf-container">
+        <span style="color: white; font-size: medium; font-family: 'Courier New', Courier, monospace;">Klik salah satu chapter untuk mulai membaca</span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
