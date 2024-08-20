@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <a href="../index.html" class="header-link">
+            <h1>HELLCOME</h1>
+        </a>
+    </div>
+
+    <div class="main-content">
+        <!-- Comic Sections -->
+        <section class="comics">
+            <h2>Comics</h2>
+            <div class="comic-container">
+                <div class="comic">
+                    <h3>Tatoeba [Kuroken]</h3>
+                    <p>Type: Manga</p>
+                    <a href="comics/tatoeba.html" class="btn">Open</a>
+                </div>
+                <div class="comic">
+                    <h3>Midnight Man</h3>
+                    <p>Type: Manhwa</p>
+                    <a href="comics/midnightman.html" class="btn">Open</a>
+                </div>
+                <div class="comic">
+                    <h3>Portofolio</h3>
+                    <p>Type: Mine</p>
+                    <a href="comics/portofolio.html" class="btn">Open</a>
+                </div>
+                <div class="comic">
+                    <h3>Skip To Loafer</h3>
+                    <p>Type: Anime</p>
+                    <a href="comics/skiptoloafer.html" class="btn">Open</a>
+                </div>
+                <div class="comic">
+                    <h3>Books</h3>
+                    <p>Type: PDF</p>
+                    <a href="comics/books.html" class="btn">Open</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Combined Update and Trending Section Side by Side -->
+        <section class="whats-new">
+            <h2>What's New</h2>
+            <div class="news-columns">
+                <!-- Update Section -->
+                <div class="updates">
+                    <h3>Latest Updates</h3>
+                    <div class="news-item">
+                        <h4>New Chapter Released!</h4>
+                        <p>Check out the latest chapter of Midnight Man now available for reading.</p>
+                        <a href="comics/midnightman.html" class="btn">Read Now</a>
+                    </div>
+                    <div class="news-item">
+                        <h4>New Manga Series</h4>
+                        <p>Tatoeba [Kuroken] is now available. Explore the new series today.</p>
+                        <a href="comics/tatoeba.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <!-- Trending Section -->
+                <div class="trending">
+                    <h3>Trending</h3>
+                    <div class="news-item">
+                        <h4>Trending: Skip To Loafer</h4>
+                        <p>Discover why Skip To Loafer is trending in the anime community.</p>
+                        <a href="comics/skiptoloafer.html" class="btn">Learn More</a>
+                    </div>
+                    <div class="news-item">
+                        <h4>Trending: Portofolio</h4>
+                        <p>Explore the latest portfolio work that's gaining attention. Here's free!</p>
+                        <a href="comics/portofolio.html" class="btn">View Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Latest Update Pop-up Modal -->
+    <div id="latestUpdateModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Latest Update</h2>
+            <p>Don't miss the latest chapter of Midnight Man, now available!</p>
+            <a href="comics/midnightman.html" class="btn">Read Now</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
